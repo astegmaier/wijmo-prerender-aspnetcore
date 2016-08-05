@@ -2,7 +2,7 @@
 
 This is a simple extension of the [aspnet-spa yo template](http://blog.stevensanderson.com/2016/05/02/angular2-react-knockout-apps-on-aspnet-core/) created by [Steve Sanderson](https://github.com/SteveSandersonMS).
 
-The purpose is to test whether it is possible to use the [Wijmo 5 FlexGrid](http://demos.wijmo.com/5/Angular2/FlexGridIntro/FlexGridIntro/) with Angular prerendering.
+The purpose is to test whether it is possible to use the [Wijmo 5 FlexGrid](http://demos.wijmo.com/5/Angular2/FlexGridIntro/FlexGridIntro/) with [Angular2 server-side prerendering](https://github.com/angular/universal).
 
 ##Setup
 
