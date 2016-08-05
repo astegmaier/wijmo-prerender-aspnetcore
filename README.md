@@ -1,40 +1,22 @@
-# Welcome to ASP.NET 5
+# Wijmo FlexGrid with Prerendering Test
 
-We've made some big updates in this release, so it’s **important** that you spend a few minutes to learn what’s new.
+This is a simple extension of the [aspnet-spa yo template](http://blog.stevensanderson.com/2016/05/02/angular2-react-knockout-apps-on-aspnet-core/) created by [Steve Sanderson](https://github.com/SteveSandersonMS).
 
-You've created a new ASP.NET 5 project. [Learn what's new](http://go.microsoft.com/fwlink/?LinkId=518016)
+The purpose is to test whether it is possible to use the [Wijmo 5 FlexGrid](http://demos.wijmo.com/5/Angular2/FlexGridIntro/FlexGridIntro/) with Angular prerendering.
 
-## This application consists of:
+To turn on prerendering, edit this line of Views/Home/Index.cshtml...
 
-*   Sample pages using ASP.NET MVC 6
-*   [Gulp](http://go.microsoft.com/fwlink/?LinkId=518007) and [Bower](http://go.microsoft.com/fwlink/?LinkId=518004) for managing client-side libraries
-*   Theming using [Bootstrap](http://go.microsoft.com/fwlink/?LinkID=398939)
+          ```<app>Loading...</app>```
 
-## How to
+...to instead read...
 
-*   [Add a Controller and View](http://go.microsoft.com/fwlink/?LinkID=398600)
-*   [Add an appsetting in config and access it in app.](http://go.microsoft.com/fwlink/?LinkID=699562)
-*   [Manage User Secrets using Secret Manager.](http://go.microsoft.com/fwlink/?LinkId=699315)
-*   [Use logging to log a message.](http://go.microsoft.com/fwlink/?LinkId=699316)
-*   [Add packages using NuGet.](http://go.microsoft.com/fwlink/?LinkId=699317)
-*   [Add client packages using Bower.](http://go.microsoft.com/fwlink/?LinkId=699318)
-*   [Target development, staging or production environment.](http://go.microsoft.com/fwlink/?LinkId=699319)
+          ```<app asp-prerender-module="ClientApp/boot-server" asp-prerender-webpack-config="webpack.config.js">Loading...</app>```
 
-## Overview
+If you do this, you'll probably get this error:
 
-*   [Conceptual overview of what is ASP.NET 5](http://go.microsoft.com/fwlink/?LinkId=518008)
-*   [Fundamentals of ASP.NET 5 such as Startup and middleware.](http://go.microsoft.com/fwlink/?LinkId=699320)
-*   [Working with Data](http://go.microsoft.com/fwlink/?LinkId=398602)
-*   [Security](http://go.microsoft.com/fwlink/?LinkId=398603)
-*   [Client side development](http://go.microsoft.com/fwlink/?LinkID=699321)
-*   [Develop on different platforms](http://go.microsoft.com/fwlink/?LinkID=699322)
-*   [Read more on the documentation site](http://go.microsoft.com/fwlink/?LinkID=699323)
+```Exception: Call to Node module failed with error: ReferenceError: navigator is not defined
+at wijmo (/Users/Andrew/Projects/wijmo-prerender-aspnetcore/vendor/wijmo/wijmo.min.js:13:79205)```
 
-## Run & Deploy
+This is probably due to wijmo making directly manipulating DOM elements, which does not conform to guidance from the Angular2 Universal team, which states:
 
-*   [Run your app](http://go.microsoft.com/fwlink/?LinkID=517851)
-*   [Run your app on .NET Core](http://go.microsoft.com/fwlink/?LinkID=517852)
-*   [Run commands in your project.json](http://go.microsoft.com/fwlink/?LinkID=517853)
-*   [Publish to Microsoft Azure Web Apps](http://go.microsoft.com/fwlink/?LinkID=398609)
-
-We would love to hear your [feedback](http://go.microsoft.com/fwlink/?LinkId=518015)
+>Don't use any of the browser types provided in the global namespace such as navigator or document

@@ -29,6 +29,7 @@ module.exports = {
             '@angular/platform-browser-dynamic',
             '@angular/router',
             '@angular/platform-server',
+            './vendor/load-wijmo.js'
         ]
     },
     output: {

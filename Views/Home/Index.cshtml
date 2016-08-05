@@ -2,8 +2,14 @@
     ViewData["Title"] = "Home Page";
 }
 
+<!--
+To turn on prerendering, replace the <app>Loading...</app> line below with this:
+
 <app asp-prerender-module="ClientApp/boot-server"
      asp-prerender-webpack-config="webpack.config.js">Loading...</app>
+-->
+
+<app>Loading...</app>
 
 <script src="~/dist/vendor.js" asp-append-version="true"></script>
 @section scripts {
