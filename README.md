@@ -6,7 +6,7 @@ The purpose is to test whether it is possible to use the [Wijmo 5 FlexGrid](http
 
 ##Setup
 
-To run the project, clone the repository, make sure you have the latest versions of [.Net Core](https://www.microsoft.com/net/core) and [NPM](https://nodejs.org/en/download/) installed, then navigate to the project folder and run.
+To run the project, clone the repository, make sure you have the latest versions of [.Net Core](https://www.microsoft.com/net/core), [NPM](https://nodejs.org/en/download/), and [Webpack](https://webpack.github.io/docs/installation.html) installed, then navigate to the project folder and run.
 
 ```dotnet restore```
 
