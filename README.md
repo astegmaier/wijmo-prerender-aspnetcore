@@ -6,17 +6,17 @@ The purpose is to test whether it is possible to use the [Wijmo 5 FlexGrid](http
 
 To turn on prerendering, edit this line of Views/Home/Index.cshtml...
 
-          ```<app>Loading...</app>```
+          <app>Loading...</app>
 
 ...to instead read...
 
-          ```<app asp-prerender-module="ClientApp/boot-server" asp-prerender-webpack-config="webpack.config.js">Loading...</app>```
+          <app asp-prerender-module="ClientApp/boot-server" asp-prerender-webpack-config="webpack.config.js">Loading...</app>
 
 If you do this, you'll probably get this error:
 
 ```Exception: Call to Node module failed with error: ReferenceError: navigator is not defined
 at wijmo (/Users/Andrew/Projects/wijmo-prerender-aspnetcore/vendor/wijmo/wijmo.min.js:13:79205)```
 
-This is probably due to wijmo making directly manipulating DOM elements, which does not conform to guidance from the Angular2 Universal team, which states:
+This is probably due to wijmo making directly manipulating DOM elements, which does not conform to [guidance from the Angular2 Universal team](https://github.com/angular/universal), which states:
 
 >Don't use any of the browser types provided in the global namespace such as navigator or document
