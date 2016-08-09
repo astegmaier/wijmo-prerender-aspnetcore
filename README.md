@@ -12,6 +12,8 @@ To run the project, clone the repository, make sure you have the latest versions
 
 ```npm install```
 
+```webpack``
+
 ```webpack --config webpack.config.vendor.js```
 
 ```dotnet run```
