@@ -4,7 +4,7 @@ This is a simple extension of the [aspnet-spa yo template](http://blog.stevensan
 
 The purpose is to test whether it is possible to use the [Wijmo 5 FlexGrid](http://demos.wijmo.com/5/Angular2/FlexGridIntro/FlexGridIntro/) with [Angular2 server-side prerendering](https://github.com/angular/universal).
 
-##Setup
+# Setup
 
 To run the project, clone the repository, make sure you have the latest versions of [.Net Core](https://www.microsoft.com/net/core), [NPM](https://nodejs.org/en/download/), and [Webpack](https://webpack.github.io/docs/installation.html) installed, then navigate to the project folder and run.
 
@@ -20,7 +20,7 @@ To run the project, clone the repository, make sure you have the latest versions
 
 ...and then visit http://localhost:5000 in your browser.
 
-##Testing Prerendering
+# Testing Prerendering
 
 To turn on prerendering, edit this line of Views/Home/Index.cshtml...
 
